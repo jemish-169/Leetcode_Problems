@@ -3,12 +3,8 @@ class Solution
     public:
         int findGCD(vector<int> &nums)
         {
-            int mini = INT_MAX, maxi = INT_MIN;
-            for (auto i: nums)
-            {
-                mini = min(i, mini);
-                maxi = max(maxi, i);
-            }
+            int mini = *min_element(begin(nums), end(nums)), maxi = *max_element(begin(nums), end(nums));
+
             return __gcd(mini, maxi);
         }
 };

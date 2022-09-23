@@ -3,8 +3,8 @@ class Solution
     public:
         bool areAlmostEqual(string s1, string s2)
         {
-            int x = 0;
-            for (int i = 0; i < s1.size(); i++)
+            int x = 0,n=s1.size();
+            for (int i = 0; i < n; i++)
             {
                 if (s1[i] != s2[i])
                     x++;

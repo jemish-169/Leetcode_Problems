@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<string> commonChars(vector<string>& words) {
+       vector<int> cnt(26,INT_MAX);
+       vector<string> res;
+        for(auto i : words)
+        {
+            vector<int> cnt1(26,0);
+            for(auto j : i) ++cnt1[j-'a'];
+            for(auto j=0;j<26;j++) cnt[j]=min(cnt[j],cnt1[j]);
+            
+        }
+        for(auto j=0;j<26;++j){
+            for(auto i =0;i<cnt[j];++i)
+                res.push_back(string(1,j+'a'));
+        }
+        return res;
+    }
+};
